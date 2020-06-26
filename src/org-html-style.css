@@ -1,0 +1,4 @@
+body {
+  background-color: theme('colors.gray.200');
+  @apply w-full max-w-xl mx-auto;
+}

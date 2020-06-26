@@ -1,0 +1,6 @@
+#+TITLE: An example for org-html-style
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-style.css"/>
+
+* Normal Text
+* KBD
+  Enter {{{kbd(C-c C-e h h)}}}.
