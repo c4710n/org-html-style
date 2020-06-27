@@ -1,6 +1,80 @@
 #+TITLE: An example for org-html-style
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-style.css"/>
 
-* Normal Text
+* Headers
+** h3
+   Shown as header.
+
+*** h4
+    Shown as header.
+
+**** h5
+     Shown as list item.
+
+***** h6
+      Shown as list item.
+
+** ~code~ in header
+* Paragraph
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus dui ac elit vehicula condimentum. Mauris a blandit quam, eu hendrerit massa. Vivamus euismod mollis magna at bibendum. Morbi vitae ligula sed sem gravida aliquam sed non enim. Sed fermentum metus et ultricies pellentesque. Morbi consequat vulputate mauris commodo mollis. Sed quis convallis nulla, non auctor sapien. Aliquam eros neque, convallis vitae interdum posuere, sagittis sed elit. Sed eget ornare magna, nec accumsan justo. Suspendisse placerat porttitor tincidunt.
+
+  Maecenas interdum risus in erat tempus venenatis. Aenean dolor sem, feugiat vitae ultricies id, accumsan a diam. Cras ornare, arcu sit amet luctus suscipit, ex nulla faucibus dui, sed imperdiet lectus nunc ut ex. Maecenas nibh augue, egestas sed sapien sed, pretium tristique tortor. Maecenas tellus ligula, finibus non posuere eu, aliquam et ante. Morbi auctor fermentum ligula nec vestibulum. Phasellus urna arcu, ullamcorper sit amet ultricies vitae, faucibus ac diam.
+
+  Sed tincidunt blandit ex tristique maximus. Fusce est augue, varius ut leo luctus, laoreet commodo felis. Maecenas vulputate risus quis sodales faucibus. Nulla ut justo euismod, sagittis elit vitae, sollicitudin sem. In maximus luctus ante, a malesuada ex posuere non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus sit amet nisl a ante egestas semper. Aliquam erat volutpat. Duis in dolor quis ante blandit dictum. Suspendisse at imperdiet metus. Sed dignissim id orci nec tristique. Donec eleifend semper tincidunt. Quisque aliquam sit amet odio eu congue. Donec viverra ipsum id sagittis dapibus. Nam ac nibh sed nunc sagittis bibendum eget sed magna. Nulla eget magna id odio tincidunt cursus ut vel lorem.
+
+* Links
+  Hello, it is time to [[https://startpge.com][Search Something]].
+
+* Lists
+** ordered lists
+   1. Apple
+   2. Orange
+   3. Banana
+
+** unordered lists
+   + Apple
+   + Orange
+   + Banana
+* Anotations
+** quote
+   #+begin_quote
+   This is the first line of quote.
+
+   This is the second line of quote.
+   #+end_quote
+** note
+   #+begin_note
+   This is the first line of note.
+
+   This is the second line of note.
+   #+end_note
+
+** warning
+   #+begin_warn
+   This is the first line of warning.
+
+   This is the second line of warning.
+   #+end_warn
+
+* Code
+** inline code
+   Insert =console.log('hello world')= into the first line.
+
+** code blocks
+   #+begin_src css
+   body {
+     @apply w-full max-w-xl mx-auto p-4;
+     @apply bg-gray-100 text-gray-700;
+   }
+
+   p {
+     @apply mb-4;
+   }
+   #+end_src
+
+   #+begin_src js
+   console.log("Hello World")
+   #+end_src
+
 * KBD
-  Enter {{{kbd(C-c C-e h h)}}}.
+  Enter {{{kbd(C-c C-e h h)}}} to export HTML.

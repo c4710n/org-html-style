@@ -1,4 +1,189 @@
+:root {
+  --color-bg: theme('colors.gray.100');
+  --color-fg: theme('colors.gray.700');
+  --color-fg-emphasized: theme('color.gray.900');
+  --color-box-bg: theme('colors.gray.300');
+  --color-primary: theme('colors.blue.600');
+  --color-primary-light: theme('colors.blue.200');
+}
+
 body {
-  background-color: theme('colors.gray.200');
-  @apply w-full max-w-xl mx-auto;
+  @apply w-full max-w-2xl mx-auto px-4 pb-4;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+/* EOF */
+body::after {
+  content: '- EOF -';
+  @apply block py-20 text-center;
+}
+
+.title {
+  @apply mt-12 mb-8;
+}
+
+/* TOC */
+#table-of-contents {
+  & ul {
+    @apply list-none;
+    @apply pl-6;
+  }
+
+  & ul:first-child {
+    @apply pl-0;
+  }
+
+  & a {
+    @apply no-underline;
+  }
+}
+
+/* headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background-color: var(--color-fg-emphasized);
+  @apply leading-none;
+  @apply mt-8 mb-4;
+}
+
+h1 {
+  @apply text-4xl;
+  @apply mb-6;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+/* paragraph */
+p {
+  @apply mb-4;
+}
+
+/* links */
+a {
+  color: var(--color-primary);
+  @apply underline;
+}
+
+/* lists */
+ul,
+ol {
+  @apply list-inside;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+/* anotations */
+blockquote,
+.note,
+.warn {
+  background-color: var(--color-box-bg);
+  @apply border-l-2 border-solid;
+  @apply p-4;
+
+  & p:last-child {
+    @apply mb-0;
+  }
+}
+
+blockquote {
+  @apply border-green-500;
+}
+
+.note {
+  @apply border-yellow-500;
+}
+
+.warn {
+  @apply border-red-500;
+}
+
+/* code */
+pre,
+code {
+  @apply font-mono;
+}
+
+code {
+  background-color: var(--color-box-bg);
+  @apply rounded-sm;
+  @apply px-2;
+}
+
+.org-src-container {
+  background-color: var(--color-box-bg);
+  @apply relative;
+  @apply border-l-2 border-solid border-blue-600;
+  @apply text-sm;
+  @apply mb-4;
+
+  & pre {
+    @apply overflow-auto;
+    @apply px-4 pt-6 pb-4;
+  }
+
+  & pre[class^='src src-']::before {
+    background-color: var(--color-primary-light);
+    @apply absolute top-0 right-0;
+    @apply leading-none px-2 py-1;
+  }
+
+  & > pre.src-sh::before,
+  & > pre.src-bash::before {
+    content: 'Shell';
+  }
+
+  & > pre.src-html::before {
+    content: 'HTML';
+  }
+
+  & > pre.src-css::before {
+    content: 'CSS';
+  }
+
+  & > pre.src-js::before,
+  & > pre.src-javascript::before {
+    content: 'JavaScript';
+  }
+
+  & > pre.src-elixir::before {
+    content: 'Elixir';
+  }
+}
+
+/* kbd */
+kbd {
+  @apply inline-block;
+  @apply border border-solid border-gray-400 rounded-sm;
+  @apply px-2 leading-tight;
+  @apply bg-white;
+  box-shadow: inset 0 -2px 0 theme('colors.gray.500'); /* taken from GitHub */
 }
