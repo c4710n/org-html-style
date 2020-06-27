@@ -1,5 +1,9 @@
 #+TITLE: An example for org-html-style
+#+HTML_DOCTYPE: html5
+#+OPTIONS: html5-fancy
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-style.css"/>
+#+KEYWORDS: org-mode,HTML,CSS,style
+
 #+MACRO: kbd @@html:<kbd>$1</kbd>@@
 
 * Headers
@@ -79,3 +83,13 @@
 
 * KBD
   Enter {{{kbd(C-c C-e h h)}}} to export HTML.
+* Literal HTML
+** inline HTML
+   It contains @@html:<strong>@@bold text@@html:</strong>@@ a inline HTML.
+
+** HTML blocks
+   #+html: <strong>Literal HTML code for export</b>
+
+   #+begin_export html
+   <strong>All lines between these markers are exported literally.</strong>
+   #+end_export
