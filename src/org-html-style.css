@@ -14,7 +14,7 @@ body {
 }
 
 .title {
-  @apply mt-12 mb-8;
+  @apply pt-12 mt-0 mb-8;
 }
 
 /* EOF */
@@ -49,6 +49,10 @@ h6 {
   background-color: var(--color-fg-emphasized);
   @apply leading-none;
   @apply mt-8 mb-4;
+
+  & a {
+    @apply no-underline;
+  }
 }
 
 h1 {
