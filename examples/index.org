@@ -1,5 +1,6 @@
 #+TITLE: An example for org-html-style
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-style.css"/>
+#+MACRO: kbd @@html:<kbd>$1</kbd>@@
 
 * Headers
 ** h3
