@@ -1047,6 +1047,26 @@ kbd {
   box-shadow: inset 0 -2px 0 #a0aec0; /* taken from GitHub */
 }
 
+/* figure */
+
+figure img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+figure figcaption {
+    text-align: center;
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #4c51bf;
+    background-color: var(--color-primary);
+    color: #fff;
+    color: var(--color-bg-light);
+  }
+
 /* purgecss end ignore */
 
 .container {
