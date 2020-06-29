@@ -22,8 +22,8 @@ body {
 }
 
 body::after {
-  content: '- EOF -';
-  @apply block py-20 text-center;
+  content: 'Powered By GNU Emacs';
+  @apply block pt-40 pb-20 text-center;
 }
 
 .header {
@@ -169,7 +169,18 @@ ol {
 }
 
 ul {
-  @apply list-disc;
+  @apply pl-4;
+
+  & li {
+    @apply relative;
+  }
+
+  & li::before {
+    content: '-';
+    position: absolute;
+    left: -1rem;
+    color: var(--color-primary);
+  }
 }
 
 ol {
@@ -178,8 +189,10 @@ ol {
 
 /* anotations */
 blockquote,
+.verse,
 .note,
-.warn {
+.warn,
+.question {
   background-color: var(--color-box-bg);
   @apply relative;
   @apply border-l-2 border-solid;
@@ -195,7 +208,8 @@ blockquote,
   }
 }
 
-blockquote {
+blockquote,
+verse {
   @apply border-green-500 bg-green-100;
 
   &::before {
@@ -219,6 +233,24 @@ blockquote {
   &::before {
     @apply bg-red-500 text-red-100;
     content: '!';
+  }
+}
+
+.note {
+  @apply border-blue-500 bg-blue-100;
+
+  &::before {
+    @apply bg-blue-500 text-blue-100;
+    content: '#';
+  }
+}
+
+.question {
+  @apply border-pink-500 bg-pink-100;
+
+  &::before {
+    @apply bg-pink-500 text-pink-100;
+    content: '?';
   }
 }
 

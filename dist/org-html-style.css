@@ -630,9 +630,9 @@ body {
 }
 
 body::after {
-  content: '- EOF -';
+  content: 'Powered By GNU Emacs';
   display: block;
-  padding-top: 5rem;
+  padding-top: 10rem;
   padding-bottom: 5rem;
   text-align: center;
 }
@@ -813,8 +813,20 @@ ol {
 }
 
 ul {
-  list-style-type: disc;
+  padding-left: 1rem
 }
+
+ul li {
+    position: relative;
+  }
+
+ul li::before {
+    content: '-';
+    position: absolute;
+    left: -1rem;
+    color: #4c51bf;
+    color: var(--color-primary);
+  }
 
 ol {
   list-style-type: decimal;
@@ -823,8 +835,10 @@ ol {
 /* anotations */
 
 blockquote,
+.verse,
 .note,
-.warn {
+.warn,
+.question {
   background-color: #f7fafc;
   background-color: var(--color-box-bg);
   position: relative;
@@ -837,7 +851,7 @@ blockquote,
   margin-bottom: 1rem
 }
 
-blockquote::before, .note::before, .warn::before {
+blockquote::before, .verse::before, .note::before, .warn::before, .question::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -849,11 +863,12 @@ blockquote::before, .note::before, .warn::before {
     padding-bottom: 0.25rem;
   }
 
-blockquote p:last-child, .note p:last-child, .warn p:last-child {
+blockquote p:last-child, .verse p:last-child, .note p:last-child, .warn p:last-child, .question p:last-child {
     margin-bottom: 0;
   }
 
-blockquote {
+blockquote,
+verse {
   --border-opacity: 1;
   border-color: #48bb78;
   border-color: rgba(72, 187, 120, var(--border-opacity));
@@ -862,7 +877,7 @@ blockquote {
   background-color: rgba(240, 255, 244, var(--bg-opacity))
 }
 
-blockquote::before {
+blockquote::before, verse::before {
     --bg-opacity: 1;
     background-color: #48bb78;
     background-color: rgba(72, 187, 120, var(--bg-opacity));
@@ -908,6 +923,44 @@ blockquote::before {
     color: #fff5f5;
     color: rgba(255, 245, 245, var(--text-opacity));
     content: '!';
+  }
+
+.note {
+  --border-opacity: 1;
+  border-color: #4299e1;
+  border-color: rgba(66, 153, 225, var(--border-opacity));
+  --bg-opacity: 1;
+  background-color: #ebf8ff;
+  background-color: rgba(235, 248, 255, var(--bg-opacity))
+}
+
+.note::before {
+    --bg-opacity: 1;
+    background-color: #4299e1;
+    background-color: rgba(66, 153, 225, var(--bg-opacity));
+    --text-opacity: 1;
+    color: #ebf8ff;
+    color: rgba(235, 248, 255, var(--text-opacity));
+    content: '#';
+  }
+
+.question {
+  --border-opacity: 1;
+  border-color: #ed64a6;
+  border-color: rgba(237, 100, 166, var(--border-opacity));
+  --bg-opacity: 1;
+  background-color: #fff5f7;
+  background-color: rgba(255, 245, 247, var(--bg-opacity))
+}
+
+.question::before {
+    --bg-opacity: 1;
+    background-color: #ed64a6;
+    background-color: rgba(237, 100, 166, var(--bg-opacity));
+    --text-opacity: 1;
+    color: #fff5f7;
+    color: rgba(255, 245, 247, var(--text-opacity));
+    content: '?';
   }
 
 /* code */
