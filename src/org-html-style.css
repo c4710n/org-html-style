@@ -163,13 +163,13 @@ p {
   }
 }
 
-ul,
-ol {
+.org-ul,
+.org-ol {
   @apply list-inside;
   @apply mb-4;
 }
 
-ul {
+.org-ul {
   @apply pl-4;
 
   & li {
@@ -184,11 +184,11 @@ ul {
   }
 }
 
-ol {
+.org-ol {
   @apply list-decimal;
 }
 
-dl {
+.org-dl {
   & dd {
     @apply pl-8;
   }
