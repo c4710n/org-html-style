@@ -16,7 +16,7 @@ html {
 body {
   background-color: var(--color-bg-light);
   color: var(--color-fg);
-  @apply w-full max-w-3xl mx-auto p-6 mb-4;
+  @apply w-full max-w-3xl mx-auto px-6 pb-6 mb-4;
   @apply border-l border-r border-b border-solid rounded-b;
   @apply leading-normal;
 }
@@ -27,8 +27,9 @@ body::after {
 }
 
 .header {
-  @apply flex justify-between items-center;
-  @apply mb-10;
+  background-color: var(--color-bg-light);
+  @apply sticky top-0 z-10 flex justify-between items-center;
+  @apply pt-6 mb-4;
 
   & .logo-wrapper {
     @apply flex flex-grow;
@@ -187,6 +188,12 @@ ol {
   @apply list-decimal;
 }
 
+dl {
+  & dd {
+    @apply pl-8;
+  }
+}
+
 /* anotations */
 blockquote,
 .verse,
@@ -317,6 +324,8 @@ kbd {
 
 /* figure */
 figure {
+  @apply mb-4;
+
   & img {
     @apply w-full max-w-full;
   }
@@ -325,5 +334,14 @@ figure {
     @apply text-center text-sm px-4 py-2;
     background-color: var(--color-primary);
     color: var(--color-bg-light);
+  }
+}
+
+/* amble */
+#preamble {
+  @apply text-right mb-10;
+
+  &::before {
+    content: 'Last Updated:';
   }
 }
